@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background-color: rgba(219, 219, 219, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(190, 190, 190);
+}
+
+@media screen and (max-width: 768px) {
+  .mobile::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.slide-down {
+  animation: slide-down 0.3s ease-in;
+}
+
+@keyframes slide-down {
+  from {
+    position: absolute;
+    top: -700px;
+  }
+  top {
+    position: absolute;
+    top: 0;
+  }
+}
