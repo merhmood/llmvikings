@@ -17,7 +17,7 @@ const WYL = [
   "Craft clear, concise, and effective prompts tailored to different AI tasks.",
   "Techniques to refine prompts for accurate, relevant, and high-quality responses.",
   "Learn multi-step, conditional, and dynamic prompt designs for solving complex problems.",
-  "Use prompts for storytelling, content creation, brainstorming, and more",
+  "Use prompts for storytelling, content creation, brainstorming, and more.",
   "Explore practical applications across industries such as marketing, customer service, education, and development.",
   "Create ethical and inclusive prompts to minimize biases in AI-generated outputs.",
   "Solve real-world challenges and gain actionable insights with guided exercises.",
@@ -66,6 +66,7 @@ function page() {
               <div className="font-bold my-4 lg:my-6">
                 <p>Duration: 3 days</p>
                 <p>Starts: 3rd of Janunary 2025</p>
+                <p>Locations: Google Meet and Zoom</p>
               </div>
               <div className="w-fit mt-5">
                 <Link
