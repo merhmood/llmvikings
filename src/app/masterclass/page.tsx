@@ -82,7 +82,7 @@ function page() {
       </section>
       <section className="mt-14 lg:mt-16 lg:max-w-6xl mx-auto">
         <h2 className="text-xl lg:text-3xl font-bold ml-10">
-          Skills you'll gain
+          Skills you&apos;ll gain
         </h2>
         <div className="mt-0 lg:mt-7">
           <ul className="list-disc flex overflow-x-scroll lg:flex-wrap lg:w-full gap-2 lg:gap-5 lg:ml-16 mobile pr-2 lg:pr-0">
@@ -100,7 +100,9 @@ function page() {
         </div>
       </section>
       <section className="mt-12 lg:mt-14 mb-16 lg:mb-36 w-4/5 max-w-6xl mx-auto">
-        <h2 className="text-xl lg:text-3xl font-bold">What you'll learn</h2>
+        <h2 className="text-xl lg:text-3xl font-bold">
+          What you&apos;ll learn
+        </h2>
         <div className="mt-2 lg:mt-3">
           <ul className="lg:flex lg:flex-wrap lg:w-full ml-10">
             {WYL.map((text, index) => (

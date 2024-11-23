@@ -4,7 +4,7 @@ import React from "react";
 import Image from "../../../../node_modules/next/image";
 
 import masterclassImage from "@/assets/masterclass.jpg";
-import Link from "../../../../node_modules/next/link";
+//import Link from "../../../../node_modules/next/link";
 
 export default function page() {
   return (

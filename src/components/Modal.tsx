@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 import Link from "../../node_modules/next/link";
 
@@ -10,17 +10,18 @@ const Modal = ({
   onShowMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const container = document.createElement("div");
+
   useEffect(() => {
     const modal = document.getElementById("modal");
-    modal && container && modal.appendChild(container);
+    if (modal && container) modal.appendChild(container);
 
     const body = document.querySelector("body");
-    body?.setAttribute("style", "overflow:hidden");
+    if (body) body.style.overflow = "hidden";
 
-    () => {
+    return () => {
       removeModal(modal);
     };
-  }, []);
+  }, [showMobileMenu]);
 
   const children = (
     <div className={`fixed z-50 top-0 w-full h-screen bg-white slide-down`}>
