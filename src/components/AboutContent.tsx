@@ -2,14 +2,15 @@
 
 import { useEffect, useRef } from "react";
 import Image from "../../node_modules/next/image";
+import Link from "../../node_modules/next/link";
 import { StaticImageData } from "../../node_modules/next/image";
 
 import blogImage1 from "@/assets/simplicity.jpg";
 import blogImage2 from "@/assets/accessibility.jpg";
 import blogImage3 from "@/assets/empowerment.jpg";
+import aboutImage from "@/assets/about.jpg";
 import Footer from "./Footer";
 import Navigation from "./Navigation";
-import Link from "../../node_modules/next/link";
 
 const BLOG = [
   {
@@ -48,14 +49,12 @@ const AboutContent = () => {
         </div>
       </section>
       <section className="relative max-w-6xl h-[calc(100vh-30vh)] lg:h-[calc(100vh-20vh)] mx-auto mt-5 lg:mt-10">
-        <video
+        <Image
+          src={aboutImage}
+          alt="about"
+          fill
           className="w-full h-full object-cover object-center lg:object-right-top lg:rounded-3xl"
-          src="/about.mp4"
-          muted
-          autoPlay
-          loop
-          ref={videoRef}
-        ></video>
+        />
         <div className="absolute flex flex-col justify-end top-0 h-full w-full bg-gradient-to-b from-black/0 to-black lg:rounded-3xl">
           <div className="flex justify-start pl-6 pb-6 lg:pl-10 lg:pb-10">
             <p className="w-4/5 lg:w-3/6 text-white text-lg lg:text-3xl">

@@ -65,7 +65,7 @@ function page() {
               </p>
               <div className="font-bold my-4 lg:my-6">
                 <p>Duration: 3 days</p>
-                <p>Starts: 3rd of Janunary 2025</p>
+                <p>Starts: 27th of December 2024</p>
                 <p>Locations: Google Meet and Zoom</p>
               </div>
               <div className="w-fit mt-5">
