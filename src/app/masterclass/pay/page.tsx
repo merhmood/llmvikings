@@ -31,9 +31,6 @@ export default function Page() {
   const handleFlutterPayment = useFlutterwave(config);
 
   useEffect(() => {
-    if (payment !== null) {
-      //redirect('/');
-    }
     (async () => {
       try {
         if (submit) {
@@ -42,11 +39,10 @@ export default function Page() {
               console.log(response);
               closePaymentModal(); // this will close the modal programmatically
             },
-            onClose: () => {},
+            onClose: () => {
+              setSubmit(false);
+            },
           });
-          setTimeout(() => {
-            setSubmit(false);
-          }, 2000);
         }
       } catch (e) {
         if (e) {
