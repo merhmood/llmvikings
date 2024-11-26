@@ -42,11 +42,10 @@ export default function Page() {
               console.log(response);
               closePaymentModal(); // this will close the modal programmatically
             },
-            onClose: () => {},
+            onClose: () => {
+              setSubmit(false);
+            },
           });
-          setTimeout(() => {
-            setSubmit(false);
-          }, 2000);
         }
       } catch (e) {
         if (e) {
