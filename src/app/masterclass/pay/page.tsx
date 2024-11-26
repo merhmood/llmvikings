@@ -5,8 +5,6 @@ import Image from '../../../../node_modules/next/image';
 import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 
 import masterclassImage from '@/assets/masterclass.jpg';
-import { redirect } from 'next/navigation';
-//import Link from "../../../../node_modules/next/link";
 
 export default function Page() {
   const [data, setData] = useState({ name: '', email: '' });
@@ -15,7 +13,7 @@ export default function Page() {
 
   const config = {
     public_key: 'FLWPUBK_TEST-8241b1f0a94381166d5989dc887ddb6f-X',
-    tx_ref: Date.now(),
+    tx_ref: new Date().getTime().toLocaleString(),
     amount: 100,
     currency: 'USD',
     payment_options: 'card,google,apple',
@@ -50,7 +48,7 @@ export default function Page() {
         }
       }
     })();
-  }, [submit, data, payment]);
+  }, [submit, data, payment, handleFlutterPayment]);
 
   return submit ? (
     <div className='h-screen grid place-items-center'>
