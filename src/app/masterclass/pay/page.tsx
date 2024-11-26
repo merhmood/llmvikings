@@ -20,9 +20,12 @@ export default function Page() {
     customer: {
       email: data.email,
       name: data.name,
+      phone_number: '',
     },
     customizations: {
       title: 'LLM Vikings Masterclass Payment',
+      description: '',
+      logo: '',
     },
   };
 
