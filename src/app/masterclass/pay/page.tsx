@@ -5,8 +5,6 @@ import Image from '../../../../node_modules/next/image';
 import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 
 import masterclassImage from '@/assets/masterclass.jpg';
-import { redirect } from 'next/navigation';
-//import Link from "../../../../node_modules/next/link";
 
 export default function Page() {
   const [data, setData] = useState({ name: '', email: '' });
