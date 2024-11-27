@@ -130,7 +130,7 @@ function page() {
             {DTK.map((item, index) => (
               <div
                 key={index}
-                className='flex flex-col items-center justify-center mr-0 lg:mr-10 gap-2 mb-4 lg:mb-0'
+                className='flex flex-col items-center justify-center mr-5 lg:mr-10 gap-2 mb-4 lg:mb-0'
               >
                 <div className='relative w-8 h-8 lg:w-10 lg:h-10 '>
                   <Image
@@ -140,7 +140,7 @@ function page() {
                     objectFit='contain'
                   />
                 </div>
-                <p className='w-3/5 lg:w-full text-center text-xs lg:text-sm'>
+                <p className='w-full text-center text-xs lg:text-sm'>
                   {item.text}
                 </p>
               </div>

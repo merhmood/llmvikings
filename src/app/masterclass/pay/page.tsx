@@ -5,10 +5,12 @@ import Image from '../../../../node_modules/next/image';
 import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 
 import masterclassImage from '@/assets/masterclass.jpg';
+import Link from 'next/link';
 
 export default function Page() {
   const [data, setData] = useState({ name: '', email: '' });
   const [submit, setSubmit] = useState(false);
+  const [agreement, setAgreement] = useState(false);
   const [payment, setPayment] = useState<'success' | 'fail' | null>(null);
 
   const config = {
@@ -42,6 +44,7 @@ export default function Page() {
             },
             onClose: () => {
               setSubmit(false);
+              setAgreement(false);
             },
           });
         }
@@ -81,6 +84,10 @@ export default function Page() {
               crafting, enhance results, and build creative solutions
               seamlessly.
             </p>
+            <h2 className='w-full mt-2 lg:mt-3 font-bold'>
+              <span className='text-lg lg:text-2xl text-black/75'>Amount:</span>
+              <span className='text-xl lg:text-3xl ml-3'>$100</span>
+            </h2>
           </div>
         </div>
         <div className='w-full mt-5 lg:mt-10'>
@@ -121,17 +128,44 @@ export default function Page() {
               required
               className='block border-2 w-full lg:w-3/5 xl:w-2/4 mx-auto h-10 rounded-xl box-border px-5 py-5 mt-1'
             />
-            <h2 className='w-full lg:w-3/5 xl:w-2/4 text-right mx-auto mt-4 font-bold'>
-              <span className='text-2xl text-black/75'>Amount:</span>
-              <span className='text-3xl ml-3'>$100</span>
-            </h2>
-            <div className='w-full lg:w-3/5 xl:w-2/4 mt-5 lg:mt-10 mx-auto'>
-              <button
-                onClick={() => setSubmit(true)}
-                className='block bg-black text-white lg:text-xl rounded-full py-1.5 px-4 lg:py-2 lg:px-6 w-full'
-              >
-                Pay
-              </button>
+            <div className='w-full lg:w-3/5 xl:w-2/4 mt-2 lg:mt-3 mx-auto'>
+              <div className='flex my-3 lg:my-6'>
+                <input
+                  type='checkbox'
+                  onChange={() => setAgreement((prevState) => !prevState)}
+                />
+                <p className='text-xs ml-5'>
+                  I have read and agree to the{' '}
+                  <Link href='/refund' className='text-blue-600'>
+                    refund policy
+                  </Link>
+                  ,{' '}
+                  <Link href='/privacy' className='text-blue-600'>
+                    {' '}
+                    privacy policy
+                  </Link>
+                  ,{' '}
+                  <Link href='/terms' className='text-blue-600'>
+                    terms of service
+                  </Link>
+                  .
+                </p>
+              </div>
+              {data.name !== '' && data.email !== '' && agreement ? (
+                <button
+                  onClick={() => setSubmit(true)}
+                  className='block bg-black text-white lg:text-xl rounded-full py-1.5 px-4 lg:py-2 lg:px-6 w-full'
+                >
+                  Pay
+                </button>
+              ) : (
+                <button
+                  disabled={true}
+                  className='block bg-black/50 text-white lg:text-xl rounded-full py-1.5 px-4 lg:py-2 lg:px-6 w-full'
+                >
+                  Pay
+                </button>
+              )}
             </div>
           </form>
         </div>
