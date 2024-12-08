@@ -112,10 +112,9 @@ export default function page() {
               className='text-blue-700'
               href='mailto:support@llmvikings.netlify.app'
             >
-              support@llmvikings.netlify.app
+              support@llmvikings.us
             </Link>
           </li>
-          <li>Phone: +234 9034780718</li>
         </ul>
       </section>
     </div>

@@ -44,3 +44,9 @@
     top: -700px;
   }
 }
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}

@@ -120,11 +120,10 @@ export default function page() {
               className='text-blue-700'
               href='mailto:support@llmvikings.netlify.app'
             >
-              support@llmvikings.netlify.app
+              support@llmvikings.us
             </Link>
           </li>
-          <li>Phone: +234 9034780718</li>
-          <li>Address: After Pengassan Estate, Lokogoma District Abuja</li>
+          <li>Address: 2261 Market Street #22750 San Francisco, CA 94114</li>
         </ul>
       </section>
     </div>
