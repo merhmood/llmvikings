@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import Image from "../../node_modules/next/image";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";

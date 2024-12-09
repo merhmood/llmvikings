@@ -13,6 +13,7 @@ const PayStack = () => {
   const [submit, setSubmit] = useState(false);
   const [agreement, setAgreement] = useState(false);
   const [payment, setPayment] = useState<"success" | "fail" | null>(null);
+  const [print, setPrint] = useState(false);
   const receiptRef = useRef<HTMLDivElement>(null);
   const date = new Date().toLocaleDateString();
   const txID = generateTransactionId();
@@ -66,12 +67,15 @@ const PayStack = () => {
     })();
   }, [submit, data, payment, handlePayment]);
 
-  // Print receipt
-  const handlePrint = () => {
-    if (window) {
-      window.print();
-    }
-  };
+  useEffect(() => {
+    // Print receipt
+    (() => {
+      if (print && typeof window !== "undefined") {
+        window.print();
+      }
+    })();
+    setPrint(false);
+  }, [print]);
 
   if (payment === "success") {
     return (
@@ -128,7 +132,7 @@ const PayStack = () => {
           </div>
           <div className="flex justify-between no-print">
             <section className="text-white mt-5 flex gap-4">
-              <button onClick={() => handlePrint()}>Print</button>
+              <button onClick={() => setPrint(true)}>Print</button>
               <Link href="/" className="text-blue-700">
                 Go home
               </Link>

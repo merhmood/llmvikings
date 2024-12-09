@@ -29,7 +29,7 @@ const heroAF = {
   description: "Gain real world applicable knowledge and skills",
   duration: "2 days",
   starts: "20th of December 2024",
-  location: "Link will be sent and hour before start",
+  location: "Zoom",
 };
 
 // What you'll learn

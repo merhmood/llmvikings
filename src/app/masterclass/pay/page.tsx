@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import axios from "axios";
 import Stripe from "@/components/Stripe";
-import PayStack from "@/components/Paystack";
+
+const PayStack = dynamic(() => import("@/components/Paystack"), { ssr: false });
 
 export default function Page() {
   const [location, setLocation] = useState(null);
