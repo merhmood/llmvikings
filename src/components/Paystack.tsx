@@ -53,8 +53,7 @@ const PayStack = () => {
                   setPayment("success");
                 }
               } catch (error) {
-                if (error) {
-                }
+                console.log(error);
               }
             },
           });
