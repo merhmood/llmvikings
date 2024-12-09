@@ -12,7 +12,7 @@ const PayStack = () => {
   const [data, setData] = useState({ name: "", email: "" });
   const [submit, setSubmit] = useState(false);
   const [agreement, setAgreement] = useState(false);
-  const [payment, setPayment] = useState<"success" | "fail" | null>("success");
+  const [payment, setPayment] = useState<"success" | "fail" | null>(null);
   const receiptRef = useRef<HTMLDivElement>(null);
   const date = new Date().toLocaleDateString();
   const txID = generateTransactionId();
@@ -22,7 +22,7 @@ const PayStack = () => {
     metadata: {
       name: data.name,
     },
-    amount: "1500000",
+    amount: "2500",
     publicKey: "pk_live_c78bb6ba17b680d64176c8e2132a04df71284e80",
   };
 
@@ -38,12 +38,24 @@ const PayStack = () => {
               setAgreement(false);
             },
             onSuccess: async () => {
-              //   const response = await axios.post("/.netlify/functions/payment", {
-              //     ...data,
-              //     date,
-              //     tx_id: txID,
-              //   });
-              setPayment("success");
+              try {
+                const response = await axios.post(
+                  "/.netlify/functions/payment",
+                  {
+                    ...data,
+                    date,
+                    tx_id: txID,
+                    amount: "15000 naria",
+                  }
+                );
+                if (response.status === 200) {
+                  setSubmit(false);
+                  setPayment("success");
+                }
+              } catch (error) {
+                if (error) {
+                }
+              }
             },
           });
         }
@@ -64,7 +76,7 @@ const PayStack = () => {
 
   if (payment === "success") {
     return (
-      <div className="bg-black h-screen grid place-items-center">
+      <div className="bg-black h-screen grid place-items-center text-sm lg:text-base">
         <div className="w-4/5 max-w-md">
           <div className="h-fit py-6 bg-white rounded-xl" ref={receiptRef}>
             <div>
@@ -89,7 +101,7 @@ const PayStack = () => {
                   </p>
                 </header>
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-center text-xs lg:text-base">
                 <section className="w-5/6 mt-3">
                   <div className="flex justify-between">
                     <p>Transaction ID:</p>
@@ -101,11 +113,11 @@ const PayStack = () => {
                   </div>
                   <div className="flex justify-between">
                     <p>Email:</p>
-                    <p>{data.name}</p>
+                    <p>{data.email}</p>
                   </div>
                   <div className="flex justify-between">
                     <p>Amount:</p>
-                    <p>{data.name} &#8358;</p>
+                    <p>&#8358;15,000</p>
                   </div>
                   <div className="flex justify-between">
                     <p>Date:</p>
