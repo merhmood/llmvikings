@@ -23,7 +23,7 @@ const PayStack = () => {
     metadata: {
       name: data.name,
     },
-    amount: "2500",
+    amount: "1500000",
     publicKey: "pk_live_c78bb6ba17b680d64176c8e2132a04df71284e80",
   };
 
