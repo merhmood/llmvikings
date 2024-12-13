@@ -25,10 +25,10 @@ const heroNonAF = {
 };
 const heroAF = {
   image: masterclassImageAF,
-  title: "Augmenting Creativity with GPT (AI)!",
-  description: "Gain real world applicable knowledge and skills",
-  duration: "2 days",
-  starts: "20th of December 2024",
+  title: "Boost Your Income with AI in 2025",
+  description: "Gain real world applicable AI knowledge and skills.",
+  duration: "21 days",
+  starts: "5th of January 2025",
   location: "Zoom",
 };
 
