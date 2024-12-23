@@ -16,7 +16,7 @@ import axios from "axios";
 // hero
 const heroNonAF = {
   image: masterclassImageNonAF,
-  title: "Master the Art of Prompt Engineering: Unlock AI’s Full Potential",
+  title: "Boost Your Income and Productivity with AI in 2025",
   description:
     " Discover the power of AI with our masterclass—learn prompt crafting, enhance results, and build creative solution seamlessly.",
   duration: "3 days",
@@ -25,10 +25,10 @@ const heroNonAF = {
 };
 const heroAF = {
   image: masterclassImageAF,
-  title: "Boost Your Income with AI in 2025",
-  description: "Gain real world applicable AI knowledge and skills.",
+  title: "Boost Your Income and Productivity with AI in 2025",
+  description: "Empowering Nigerians to innovate",
   duration: "21 days",
-  starts: "5th of January 2025",
+  starts: "14th of February 2025",
   location: "Zoom",
 };
 
@@ -44,13 +44,22 @@ const WYLNonAF = [
 ];
 
 const WYLAF = [
-  "Craft clear, concise, and effective prompts tailored to different AI tasks.",
-  "Techniques to refine prompts for accurate, relevant, and high-quality responses.",
-  "Learn multi-step, conditional, and dynamic prompt designs for solving complex problems.",
-  "Use prompts for storytelling, content creation, brainstorming, and more.",
-  "Explore practical applications across industries such as marketing, customer service, education, and development.",
-  "Create ethical and inclusive prompts to minimize biases in AI-generated outputs.",
-  "Solve real-world challenges and gain actionable insights with guided exercises.",
+  "10X Your Productivity—Effortlessly: Discover how ChatGPT can help you work smarter, not harder, by automating tasks, brainstorming ideas, and streamlining your workflows.",
+  "Unleash ChatGPT in Every Aspect of Your Life: Discover how to integrate ChatGPT into daily tasks like managing finances, improving family relationships, boosting productivity, choosing stylish outfits, unlocking new income streams etc.",
+  "Master ChatGPT from Your Mobile Phone: Become a pro at using ChatGPT on your mobile device, enabling you to stay productive, creative, and informed wherever you go.",
+  "Discover 10+ Lucrative Ways to Make Money with AI: Unlock actionable strategies for earning income using ChatGPT, including freelancing, content creation, consulting, and more.",
+  "Become an Expert in Any Field—in Minutes: Learn how to ask the right questions and systematically extract valuable insights and knowledge from ChatGPT to gain mastery in any subject or industry—whether it’s becoming a marketing guru, acing job interviews with domain-specific knowledge, mastering crypto trading strategies, or even creating professional-level business plans effortlessly.",
+  "Draft Like a Pro with ChatGPT: Transform your communication with ChatGPT by crafting flawless emails, proposals, reports, and presentations that leave a lasting impression.",
+  "Enhance Your Texting and Communication Skills: Level up your messaging game using Meta AI tools on WhatsApp to improve clarity, persuasion, and engagement in your conversations.",
+  "Create AI-Powered Content That Sells: Learn to generate compelling blog posts, social media captions, ad copy, and more with ChatGPT, boosting your online presence and income potential.",
+  "AI in Customer Engagement and Support: Discover how to use AI tools like ChatGPT to enhance customer interactions, handle inquiries, and build stronger relationships in your business.",
+  "AI-Driven Personal Growth: Use ChatGPT for goal setting, time management, and self-improvement, helping you stay organized and achieve your dreams faster.",
+  "AI for Entrepreneurs and Business Owners: Explore how ChatGPT can optimize operations, generate creative ideas, and automate marketing for startups and established businesses alike.",
+  "AI-Enhanced Learning and Studying: Find out how to use ChatGPT as a study assistant for mastering complex concepts, writing essays, and preparing for exams.",
+  "Ethical and Responsible Use of AI: Understand how to use AI tools responsibly while minimizing biases, fostering inclusivity, and building trust in your work.",
+  "Get Published Without Writing Experience: Use ChatGPT to co-create compelling short stories, novels, or poetry collections ready for publication on Amazon Kindle or other platforms.",
+  "Dominate Public Speaking or Debate: Generate speech outlines, persuasive arguments, or counterpoints to master debates or public presentations on any topic.",
+  "Teach AI Skills to Others: Create workshops, webinars, or coaching programs to train others in leveraging AI tools, earning income while empowering others.",
 ];
 
 // Skills you'll gain
@@ -77,7 +86,10 @@ const DTKNonAF = [
   { image: creditImage, text: "Upto 150k free AI credits" },
 ];
 
-const DTKAF = [{ image: taughtImage, text: "Taught in english" }];
+const DTKAF = [
+  { image: taughtImage, text: "Taught in english" },
+  { image: certificateImage, text: "Certificate of attendance" },
+];
 
 function MasterclassContent() {
   const [location, setLocation] = useState(null);
@@ -143,8 +155,8 @@ function Content({
             </div>
             <div className="pl-6 mt-5 lg:mt-0 w-11/12 lg:w-6/12 lg:ml-12">
               <h2 className="text-2xl lg:text-3xl font-bold">{hero.title}</h2>
-              <p className="mt-2 lg:mt-4">{hero.description}</p>
-              <div className="font-bold my-4 lg:my-6">
+              <p className="mt-2 lg:mt-2">{hero.description}</p>
+              <div className="font-bold my-2 lg:my-2">
                 <p>Duration: {hero.duration} </p>
                 <p>Starts: {hero.starts}</p>
                 <p>Location: {hero.location}</p>
@@ -194,7 +206,7 @@ function Content({
           </ul>
         </div>
       </section>
-      <section className="mt-12 lg:mt-14 mb-16 lg:mb-36 w-4/5 max-w-6xl mx-auto">
+      <section className="mt-12 lg:mt-14 w-4/5 max-w-6xl mx-auto">
         <h2 className="text-xl lg:text-3xl font-bold">Details to know</h2>
         <div className="mt-6 lg:mt-10">
           <ul className="flex flex-wrap w-full ml-0 lg:ml-10">
@@ -219,18 +231,36 @@ function Content({
           </ul>
         </div>
       </section>
+      <div className="mt-12 lg:mt-16 w-fit mb-16 lg:mb-36 mx-auto">
+        <Link
+          className="bg-black text-white lg:text-xl rounded-full py-1.5 px-4 lg:py-3 lg:px-6"
+          href="/masterclass/pay"
+        >
+          Enroll for Masterclass
+        </Link>
+      </div>
       <Footer />
     </div>
   );
 }
 
-const ListItem = ({ border, text }: { border: boolean; text: string }) =>
-  border ? (
+const ListItem = ({ border, text }: { border: boolean; text: string }) => {
+  const listText = !border && text.split(":");
+  return border ? (
     <li className="list-none px-5 py-3 text-xs w-fit lg:text-base mt-4 lg:mt-0 bg-[#f7f7f7] border border-[#b6b5b5] rounded-full">
       {text}
     </li>
   ) : (
-    <li className="list-disc mt-4 text-sm lg:text-base">{text}</li>
+    <li className="list-disc mt-4 text-sm lg:text-base">
+      {
+        <>
+          <span className="font-bold">{(listText as string[])[0]}</span>
+          <span>:</span>
+          <span>{(listText as string[])[1]}</span>
+        </>
+      }
+    </li>
   );
+};
 
 export default MasterclassContent;

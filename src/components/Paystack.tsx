@@ -23,7 +23,7 @@ const PayStack = () => {
     metadata: {
       name: data.name,
     },
-    amount: "2500",
+    amount: "1550000",
     publicKey: "pk_live_c78bb6ba17b680d64176c8e2132a04df71284e80",
   };
 
@@ -46,7 +46,7 @@ const PayStack = () => {
                     ...data,
                     date,
                     tx_id: txID,
-                    amount: "15000 naria",
+                    amount: "15500 naria",
                   }
                 );
                 if (response.status === 200) {
@@ -100,7 +100,7 @@ const PayStack = () => {
                     LLM Vikings Masterclass Payment Reciept
                   </h2>
                   <p className="text-center">
-                    Boost Your Income with AI in 2025
+                    Boost Your Income and Productivity with AI in 2025
                   </p>
                 </header>
               </div>
@@ -120,7 +120,7 @@ const PayStack = () => {
                   </div>
                   <div className="flex justify-between">
                     <p>Amount:</p>
-                    <p>&#8358;15,000</p>
+                    <p>&#8358;15,500</p>
                   </div>
                   <div className="flex justify-between">
                     <p>Date:</p>
@@ -165,14 +165,22 @@ const PayStack = () => {
               />
             </div>
             <h2 className="font-bold text-lg lg:text-2xl mt-3 lg:mt-0 lg:ml-4">
-              Boost Your Income with AI in 2025
+              Boost Your Income and Productivity with AI in 2025
             </h2>
           </div>
           <div className="lg:w-96 mt-2 lg:mt-5 mx-auto lg:mx-0 text-sm lg:text-base">
-            <p>Gain real world applicable AI Knowledge and Skills</p>
+            <p>Empowering Nigerians to innovate</p>
             <h2 className="w-full mt-2 lg:mt-3 font-bold">
-              <span className="text-lg lg:text-2xl text-black/75">Amount:</span>
-              <span className="text-xl lg:text-3xl ml-3">&#8358;15,000</span>
+              <span className="text-lg lg:text-2xl">Amount:</span>
+              <span className="text-xl lg:text-3xl ml-3 line-through text-black/70 decoration-black/70">
+                &#8358;18,500
+              </span>
+              <span className="text-xl lg:text-3xl ml-3 text-black">
+                &#8358;15,500{" "}
+                <span className="text-[10px] lg:text-xs ml-0.5 no-underline">
+                  Early Bird price
+                </span>
+              </span>
             </h2>
           </div>
           <div className="text-sm lg:text-base text-blue-700 mt-4 font-bold underline">
