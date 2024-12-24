@@ -170,15 +170,17 @@ const PayStack = () => {
           </div>
           <div className='lg:w-96 mt-2 lg:mt-5 mx-auto lg:mx-0 text-sm lg:text-base'>
             <p>Empowering Nigerians to innovate</p>
-            <h2 className='w-full mt-2 lg:mt-3 font-bold'>
+            <h2 className='w-full mt-2 lg:mt-3 font-bold flex flex-wrap'>
               <span className='text-lg lg:text-2xl'>Amount:</span>
-              <span className='text-xl lg:text-3xl ml-3 line-through text-black/70 decoration-black/70'>
-                &#8358;12,500
-              </span>
-              <span className='text-xl lg:text-3xl ml-3 text-black'>
-                &#8358;9,500{' '}
-                <span className='text-[10px] lg:text-xs ml-0.5 no-underline'>
-                  Early Bird price
+              <span className='flex'>
+                <span className='text-xl lg:text-3xl ml-3 line-through text-black/70 decoration-black/70'>
+                  &#8358;12,500
+                </span>
+                <span className='text-xl lg:text-3xl ml-3 text-black flex flex-col'>
+                  <span>&#8358;9,500 </span>
+                  <span className='text-[10px] lg:text-xs ml-0.5 no-underline -mt-3 lg:-mt-1 font-normal'>
+                    Early Bird price
+                  </span>
                 </span>
               </span>
             </h2>
