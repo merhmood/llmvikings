@@ -108,11 +108,8 @@ export default function page() {
         <ul className='list-disc'>
           <li>
             Email:{' '}
-            <Link
-              className='text-blue-700'
-              href='mailto:support@llmvikings.netlify.app'
-            >
-              support@llmvikings.us
+            <Link className='text-blue-700' href='mailto:support@llmvikings.us'>
+              contact@llmvikings.us
             </Link>
           </li>
         </ul>

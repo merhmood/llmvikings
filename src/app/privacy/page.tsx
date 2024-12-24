@@ -116,11 +116,8 @@ export default function page() {
         <ul className='list-disc'>
           <li>
             Email:{' '}
-            <Link
-              className='text-blue-700'
-              href='mailto:support@llmvikings.netlify.app'
-            >
-              support@llmvikings.us
+            <Link className='text-blue-700' href='mailto:support@llmvikings.us'>
+              contact@llmvikings.us
             </Link>
           </li>
           <li>Address: 2261 Market Street #22750 San Francisco, CA 94114</li>

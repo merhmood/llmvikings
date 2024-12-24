@@ -53,7 +53,8 @@ export default function page() {
         <ul className='list-disc'>
           <li>
             Certain charges, such as transaction fees from payment providers
-            (e.g., Apple Pay, Google Pay, Flutterwave, Paystack), are non-refundable.
+            (e.g., Apple Pay, Google Pay, Flutterwave, Paystack), are
+            non-refundable.
           </li>
         </ul>
       </section>
@@ -64,11 +65,8 @@ export default function page() {
         <ul className='list-disc'>
           <li>
             Contact: Submit refund requests to{' '}
-            <Link
-              className='text-blue-700'
-              href='mailto:support@llmvikings.netlify.app'
-            >
-              support@llmvikings.us
+            <Link className='text-blue-700' href='mailto:support@llmvikings.us'>
+              contact@llmvikings.us
             </Link>
           </li>
           <li>
