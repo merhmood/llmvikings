@@ -14,16 +14,22 @@ const PayStack = () => {
   const [agreement, setAgreement] = useState(false);
   const [payment, setPayment] = useState<'success' | 'fail' | null>(null);
   const [print, setPrint] = useState(false);
+  const [coupon, setCoupon] = useState<{
+    request: boolean;
+    value: string;
+  }>({ request: false, value: '' });
   const receiptRef = useRef<HTMLDivElement>(null);
   const date = new Date().toLocaleDateString();
   const txID = generateTransactionId();
+  const amount = '9,500';
+  const earlyBird = true;
 
   const config = {
     email: data.email,
     metadata: {
       name: data.name,
     },
-    amount: '950000',
+    amount: `${amount.replace(',', '')}00`,
     publicKey: 'pk_live_c78bb6ba17b680d64176c8e2132a04df71284e80',
   };
 
@@ -46,7 +52,7 @@ const PayStack = () => {
                     ...data,
                     date,
                     tx_id: txID,
-                    amount: '9500 naria',
+                    amount: `${amount} naria`,
                   }
                 );
                 if (response.status === 200) {
@@ -92,7 +98,7 @@ const PayStack = () => {
                     objectFit='contain'
                   />
                 </div>
-                <p className='my-1 text-[#15bc32]'>Payment Success</p>
+                <p className='my-1 text-[#15bc32]'>Payment Successful</p>
               </div>
               <div className='flex justify-center'>
                 <header className='w-5/6 py-3 border-b border-gray-300'>
@@ -120,7 +126,7 @@ const PayStack = () => {
                   </div>
                   <div className='flex justify-between'>
                     <p>Amount:</p>
-                    <p>&#8358;9,500</p>
+                    <p>&#8358;{amount}</p>
                   </div>
                   <div className='flex justify-between'>
                     <p>Date:</p>
@@ -151,7 +157,7 @@ const PayStack = () => {
     );
   }
   return (
-    <div className='grid place-items-center h-screen'>
+    <div className='grid place-items-center h-screen mt-5 lg:mb-0'>
       <section className='lg:flex lg:flex-row-reverse h-fit justify-center w-5/6 max-w-7xl'>
         <div className='lg:mt-10 xl:mt-20'>
           <div className='lg:flex lg:items-center gap-2'>
@@ -173,20 +179,54 @@ const PayStack = () => {
             <h2 className='w-full mt-2 lg:mt-3 font-bold flex flex-wrap'>
               <span className='text-lg lg:text-2xl'>Amount:</span>
               <span className='flex'>
-                <span className='text-xl lg:text-3xl ml-3 line-through text-black/70 decoration-black/70'>
-                  &#8358;12,500
-                </span>
-                <span className='text-xl lg:text-3xl ml-3 text-black flex flex-col'>
-                  <span>&#8358;9,500 </span>
-                  <span className='text-[10px] lg:text-xs ml-0.5 no-underline -mt-3 lg:-mt-1 font-normal'>
-                    Early Bird price
+                {earlyBird && (
+                  <span className='text-xl lg:text-3xl ml-3 line-through text-black/70 decoration-black/70'>
+                    &#8358;12,500
                   </span>
+                )}
+                <span className='text-xl lg:text-3xl ml-3 text-black flex flex-col'>
+                  <span>&#8358;{amount} </span>
+                  {earlyBird && (
+                    <span className='text-[10px] lg:text-xs ml-0.5 no-underline -mt-3 lg:-mt-1 font-normal'>
+                      Early Bird price
+                    </span>
+                  )}
                 </span>
               </span>
             </h2>
           </div>
+          <div>
+            <label htmlFor='coupon'>Coupon</label>
+            <br />
+            <input
+              type='text'
+              placeholder='Enter Code'
+              id='coupon'
+              value={coupon.value}
+              onChange={(e) =>
+                setCoupon((prevState) => ({
+                  ...prevState,
+                  value: e.target.value,
+                }))
+              }
+              required
+              className='border-2 h-10 rounded-xl box-border px-5 py-5 mt-1'
+            />
+            <br />
+            <button
+              onClick={() =>
+                setCoupon((prevState) => ({
+                  ...prevState,
+                  request: true,
+                }))
+              }
+              className='hover:font-black text-xs lg:text-base'
+            >
+              Apply Coupon
+            </button>
+          </div>
           <div className='text-sm lg:text-base text-blue-700 mt-4 font-bold underline'>
-            <Link href='/masterclass'>Go to Masterclass</Link>
+            <Link href='/masterclass'>For more details see Masterclass</Link>
           </div>
         </div>
         <div className='w-full mt-5 lg:mt-10'>
@@ -266,7 +306,7 @@ const PayStack = () => {
               ) : (
                 <button
                   disabled={true}
-                  className='block bg-black/50 text-white lg:text-xl rounded-full py-1.5 px-4 lg:py-2 lg:px-6 w-full'
+                  className='block bg-black/50 text-white lg:text-xl rounded-full py-1.5 px-4 lg:py-2 lg:px-6 w-full mb-5'
                 >
                   Pay
                 </button>

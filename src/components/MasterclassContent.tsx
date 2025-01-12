@@ -21,6 +21,7 @@ const heroNonAF = {
     ' Discover the power of AI with our masterclass—learn prompt crafting, enhance results, and build creative solution seamlessly.',
   duration: '3 days',
   starts: '27th of December 2024',
+  time: 'N/A',
   location: 'Google Meet or Zoom',
 };
 const heroAF = {
@@ -28,7 +29,8 @@ const heroAF = {
   title: 'Boost Your Income and Productivity with AI in 2025',
   description: 'Empowering Nigerians to innovate',
   duration: '2 weeks',
-  starts: '14th of February 2025',
+  starts: '12th of February 2025',
+  time: '8:15 pm - 9:00 pm (WAT)',
   location: 'Zoom',
 };
 
@@ -97,13 +99,14 @@ const DTKAF = [
 ];
 
 function MasterclassContent() {
-  const [location, setLocation] = useState(null);
-
+  const [location, setLocation] = useState('AF');
   useEffect(() => {
     if (location == null) {
       (async () => {
         const response = await axios.get('https://ipapi.co/json/');
-        setLocation(response.data.continent_code);
+        if (response.status === 200) {
+          setLocation(response.data.continent_code);
+        }
       })();
     }
   });
@@ -131,12 +134,15 @@ function Content({
     description: string;
     duration: string;
     starts: string;
+    time: string;
     location: string;
   };
   SYG: string[];
   WYL: string[];
   DTK: { image: string | StaticImageData; text: string }[];
 }) {
+  const [wydHeight, setWydHeight] = useState('56');
+
   return (
     <div>
       <section className='max-w-6xl mx-auto pt-10'>
@@ -164,6 +170,7 @@ function Content({
               <div className='font-bold my-2 lg:my-2'>
                 <p>Duration: {hero.duration} </p>
                 <p>Starts: {hero.starts}</p>
+                <p>Time: {hero.time}</p>
                 <p>Location: {hero.location}</p>
               </div>
               <div className='w-fit mt-5'>
@@ -201,7 +208,7 @@ function Content({
         <h2 className='text-xl lg:text-3xl font-bold'>
           What you&apos;ll learn
         </h2>
-        <div className='mt-2 lg:mt-3'>
+        <div className={`relative mt-2 lg:mt-3 h-${wydHeight} overflow-hidden`}>
           <ul className='lg:flex lg:flex-wrap lg:w-full ml-10'>
             {WYL.map((text, index) => (
               <div key={index} className='lg:basis-3/6 shrink-0 lg:pr-40'>
@@ -209,6 +216,26 @@ function Content({
               </div>
             ))}
           </ul>
+          <div>
+            <div className='flex justify-end items-end mt-10'>
+              <button
+                className='font-medium hover:font-black text-sm lg:text-base'
+                onClick={() => setWydHeight('56')}
+              >
+                Read less
+              </button>
+            </div>
+            {wydHeight !== '100%' && (
+              <div className='flex justify-end items-end absolute top-0 w-full h-full bg-gradient-to-b from-transparent to-white'>
+                <button
+                  className='font-medium hover:font-black text-sm lg:text-base'
+                  onClick={() => setWydHeight('100%')}
+                >
+                  Read more
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </section>
       <section className='mt-12 lg:mt-14 w-4/5 max-w-6xl mx-auto'>
@@ -235,6 +262,23 @@ function Content({
             ))}
           </ul>
         </div>
+      </section>
+      <section className='mt-12 lg:mt-14 w-4/5 max-w-6xl mx-auto'>
+        <h2 className='text-xl lg:text-3xl font-bold'>Instructors</h2>
+        <ul>
+          <li>
+            <img src='' alt='' />
+            <h2></h2>
+            <p></p>
+            <div></div>
+          </li>
+          <li>
+            <img src='' alt='' />
+            <h2></h2>
+            <p></p>
+            <div></div>
+          </li>
+        </ul>
       </section>
       <div className='mt-12 lg:mt-16 w-fit mb-16 lg:mb-36 mx-auto'>
         <Link

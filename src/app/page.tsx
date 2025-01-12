@@ -103,16 +103,10 @@ export default function HomePage() {
         <h2 className='text-base lg:text-3xl max-w-3xl w-4/5 text-center mx-auto font-semibold'>
           What Top Professionals are Saying!
         </h2>
-        <div className='flex lg:justify-center overflow-x-scroll mt-7 lg:mt-16 mobile'>
-          {TESTIMONIES.map((testimonyDetails, index) =>
-            index == 0 ? (
-              <div className='shrink-0 basis-64 ml-6' key={index}>
-                <Testimony details={testimonyDetails} />
-              </div>
-            ) : (
-              <Testimony key={index} details={testimonyDetails} />
-            )
-          )}
+        <div className='flex lg:justify-center overflow-x-scroll mt-7 lg:mt-16 mobile pl-6'>
+          {TESTIMONIES.map((testimonyDetails, index) => (
+            <Testimony key={index} details={testimonyDetails} />
+          ))}
         </div>
       </section>
       <section className='mt-20 lg:mt-44 mb-20 lg:mb-36'>
@@ -224,7 +218,7 @@ const Testimony = ({
 }: {
   details: { title: string; subtitle: string; description: string };
 }) => (
-  <div className='shrink-0 basis-64 bg-gray-50 py-6 pr-2 rounded-3xl mr-6'>
+  <div className='shrink-0 basis-64 bg-gray-50 py-6 pr-4 rounded-3xl mr-6'>
     <h2 className='text-xl ml-6 font-medium'>{details.title}</h2>
     <h3 className='ml-6 font-bold text-gray-500'>{details.subtitle}</h3>
     <div className='relative w-16 h-16'>
