@@ -28,7 +28,7 @@ const heroAF = {
   image: masterclassImageAF,
   title: 'Boost Your Income and Productivity with AI in 2025',
   description: 'Empowering Nigerians to innovate',
-  duration: '2 weeks',
+  duration: '7 days',
   starts: '12th of February 2025',
   time: '8:15 pm - 9:00 pm (WAT)',
   location: 'Zoom',
