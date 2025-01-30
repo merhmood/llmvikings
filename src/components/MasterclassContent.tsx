@@ -48,8 +48,7 @@ const WYLNonAF = [
 const WYLAF = [
   '10X Your Productivity—Effortlessly: Discover how ChatGPT can help you work smarter, not harder, by automating tasks, brainstorming ideas, and streamlining your workflows.',
   'Unleash ChatGPT in Every Aspect of Your Life: Discover how to integrate ChatGPT into daily tasks like managing finances, improving family relationships, boosting productivity, choosing stylish outfits, unlocking new income streams etc.',
-  'Master ChatGPT from Your Mobile Phone: Become a pro at using ChatGPT on your mobile device, enabling you to stay productive, creative, and informed wherever you go.',
-  'Discover 10+ Lucrative Ways to Make Money with AI: Unlock actionable strategies for earning income using ChatGPT, including freelancing, content creation, consulting, and more.',
+  'Master ChatGPT from Your Mobile Phone: Become a pro at using ChatGPT on your mobile device, enabling you to stay productive, creative, and informed wherever you go.', 
   'Become an Expert in Any Field—in Minutes: Learn how to ask the right questions and systematically extract valuable insights and knowledge from ChatGPT to gain mastery in any subject or industry—whether it’s becoming a marketing guru, acing job interviews with domain-specific knowledge, mastering crypto trading strategies, or even creating professional-level business plans effortlessly.',
   'Draft Like a Pro with ChatGPT: Transform your communication with ChatGPT by crafting flawless emails, proposals, reports, and presentations that leave a lasting impression.',
   'Enhance Your Texting and Communication Skills: Level up your messaging game using Meta AI tools on WhatsApp to improve clarity, persuasion, and engagement in your conversations.',
@@ -59,9 +58,6 @@ const WYLAF = [
   'AI for Entrepreneurs and Business Owners: Explore how ChatGPT can optimize operations, generate creative ideas, and automate marketing for startups and established businesses alike.',
   'AI-Enhanced Learning and Studying: Find out how to use ChatGPT as a study assistant for mastering complex concepts, writing essays, and preparing for exams.',
   'Ethical and Responsible Use of AI: Understand how to use AI tools responsibly while minimizing biases, fostering inclusivity, and building trust in your work.',
-  'Get Published Without Writing Experience: Use ChatGPT to co-create compelling short stories, novels, or poetry collections ready for publication on Amazon Kindle or other platforms.',
-  'Dominate Public Speaking or Debate: Generate speech outlines, persuasive arguments, or counterpoints to master debates or public presentations on any topic.',
-  'Teach AI Skills to Others: Create workshops, webinars, or coaching programs to train others in leveraging AI tools, earning income while empowering others.',
 ];
 
 // Skills you'll gain
