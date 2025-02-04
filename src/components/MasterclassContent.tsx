@@ -260,7 +260,7 @@ function Content({
         </div>
       </section>
       <section className='mt-12 lg:mt-14 w-4/5 max-w-6xl mx-auto'>
-        <h2 className='text-xl lg:text-3xl font-bold'>Instructors</h2>
+        <h2 className='text-xl lg:text-3xl font-bold'></h2>
         <ul>
           <li>
             <img src='' alt='' />
